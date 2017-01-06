@@ -1,0 +1,25 @@
+{% extends "skeleton.html" %}
+
+{% block title %}{{ title|capitalize }}{% endblock %}
+{% block header %}
+    {{ super() }}
+    <meta name="description" content="main">
+{% endblock %}
+
+{% block body %}
+    <h1>{{ self.title() }}</h1>
+    <ul>
+    {% for param in params %}
+        <li>{{ param }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+    {% set test = "20" %}
+    {% if test|int == 20 %}
+        <p>test OK ! {{ "yeah"|myfilter }}</p>
+    {% endif %}
+    </footer>
+{% endblock %}
